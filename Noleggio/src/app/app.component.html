@@ -1,16 +1,11 @@
-<form action="">
-  <input type="text" #tipo>Tipo
-  <br><input type="text" #descrizione>Descrizione
-  <br><input type="text" #tariffa>Tariffa
-  <br><input type="number" #valutazioneMedia>Valutazione Media
-  <br>
-  <button (click)="noleggia(tipo, descrizione, tariffa, valutazioneMedia)">Noleggia</button>
-</form>
-<br>
-<div *ngFor="let dato of data">
-  <button (click)="mostra(dato)">{{dato.Tipo}} {{dato.Descrizione}} {{dato.Tariffa}} {{dato.ValutazioneMedia}}</button>
+<div *ngFor="let agg of drive">
+  <app-driving-list [mostra]="agg"></app-driving-list> <input type="button" (click)="noleggio(agg)" value="Noleggia">
 </div>
-<br>
-<div *ngIf ="nascondi">
-  <app-rented [finale]="ciclo">ciao</app-rented>
+<h2>dettagli</h2>
+<div *ngIf="vis">
+  <app-rented [dett]="out"></app-rented>
+</div>
+<h2>noleggiEffettuati</h2>
+<div *ngFor="let gj of noleggiEffettuati">
+  <app-rent-list [ren]="gj"></app-rent-list>
 </div>
