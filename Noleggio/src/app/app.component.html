@@ -1,6 +1,16 @@
 <form action="">
   <input type="text" #tipo>Tipo
-  <input type="text" #descrizione>Descrizione
-  <input type="text" #tariffa>Tariffa
-  <input type="text" #valutazionemedia>Valutazione Media
+  <br><input type="text" #descrizione>Descrizione
+  <br><input type="text" #tariffa>Tariffa
+  <br><input type="number" #valutazioneMedia>Valutazione Media
+  <br>
+  <button (click)="noleggia(tipo, descrizione, tariffa, valutazioneMedia)">Noleggia</button>
 </form>
+<br>
+<div *ngFor="let dato of data">
+  <button (click)="mostra(dato)">{{dato.Tipo}} {{dato.Descrizione}} {{dato.Tariffa}} {{dato.ValutazioneMedia}}</button>
+</div>
+<br>
+<div *ngIf ="nascondi">
+  <app-rented [finale]="ciclo">ciao</app-rented>
+</div>
