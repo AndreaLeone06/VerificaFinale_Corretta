@@ -1,11 +1,12 @@
+<h1>Veicoli</h1>
 <div *ngFor="let agg of drive">
   <app-driving-list [mostra]="agg"></app-driving-list> <input type="button" (click)="noleggio(agg)" value="Noleggia">
 </div>
-<h2>dettagli</h2>
+<h1>Dettagli</h1>
 <div *ngIf="vis">
   <app-rented [dett]="out"></app-rented>
 </div>
-<h2>noleggiEffettuati</h2>
+<h1>Noleggi</h1>
 <div *ngFor="let gj of noleggiEffettuati">
   <app-rent-list [ren]="gj"></app-rent-list>
 </div>
